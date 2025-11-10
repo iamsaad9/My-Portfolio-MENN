@@ -2,6 +2,7 @@ import express from "express";
 import projectRoutes from "./routes/projectRoutes.js";
 import skillRoutes from "./routes/skillRoutes.js";
 import { connectDB } from "./config/db.js";
+import testimonialRoutes from "./routes/testimonialRoutes.js";
 import dotenv from "dotenv";
 
 dotenv.config({ path: "./src/.env" });
@@ -15,6 +16,7 @@ app.use(express.json());
 // ✅ Then use your routes
 app.use("/api/projects", projectRoutes);
 app.use("/api/skills", skillRoutes);
+app.use("/api/testimonial", testimonialRoutes);
 
 connectDB();
 
