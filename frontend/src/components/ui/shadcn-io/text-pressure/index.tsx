@@ -145,7 +145,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
           };
 
           const wdth = width ? Math.floor(getAttr(d, 5, 200)) : 100;
-          const wght = weight ? Math.floor(getAttr(d, 400, 900)) : 400;
+          const wght = weight ? Math.floor(getAttr(d, 100, 700)) : 400;
           const italVal = italic ? getAttr(d, 0, 1).toFixed(2) : "0";
           const alphaVal = alpha ? getAttr(d, 0, 1).toFixed(2) : "1";
 
@@ -168,16 +168,17 @@ const TextPressure: React.FC<TextPressureProps> = ({
     >
       <style>{`
         @font-face {
-          font-family: '${fontFamily}';
-          src: url('${fontUrl}');
+          font-family: '${fontFamily}' ;
+          src: url('${fontUrl}' );
           font-style: normal;
+          font-family: '${fontFamily} ';
         }
         .stroke span {
           position: relative;
           color: ${textColor};
-        }
-        .stroke span::after {
-          content: attr(data-char);
+          }
+          .stroke span::after {
+            content: attr(data-char);
           position: absolute;
           left: 0;
           top: 0;
@@ -190,7 +191,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
 
       <h1
         ref={titleRef}
-        className={`text-pressure-title font-extrabold! ${className} ${
+        className={`text-pressure-title ${className} ${
           flex ? "flex justify-between" : ""
         } ${stroke ? "stroke" : ""} uppercase text-center`}
         style={{
@@ -200,7 +201,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
           transform: `scale(1, ${scaleY})`,
           transformOrigin: "center top",
           margin: 0,
-          fontWeight: 300,
+          fontWeight: 100,
           color: stroke ? undefined : textColor,
         }}
       >
@@ -211,9 +212,11 @@ const TextPressure: React.FC<TextPressureProps> = ({
               spansRef.current[i] = el;
             }}
             data-char={char}
-            className="inline-block "
+            className="inline-block"
           >
-            {char}
+            <span className=" bg-gradient-to-b from-white to-slate-800 bg-clip-text text-center text-9xl font-semibold leading-none text-transparent">
+              {char}
+            </span>
           </span>
         ))}
       </h1>
