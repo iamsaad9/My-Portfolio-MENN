@@ -5,6 +5,10 @@ import IntroSummary from "./components/IntroSummary";
 import SkillsSection from "./components/SkillsSection";
 import { HeroParallaxDemo } from "./components/HeroParalax";
 import Services from "./components/ServicesSection";
+import ProjectsHeading from "./components/ProjectHeading";
+import ProjectCarousel from "./components/ProjectCarousal";
+import ProjectsSection from "./components/Projects";
+import { AnimatedTestimonialsDemo } from "./components/Testimonials";
 
 function App() {
   return (
@@ -14,8 +18,12 @@ function App() {
       <IntroSection />
       <IntroSummary />
       <SkillsSection />
-      <Services />
       <HeroParallaxDemo />
+      <Services />
+      <ProjectsHeading />
+      <ProjectCarousel />
+      <ProjectsSection />
+      <AnimatedTestimonialsDemo />
     </div>
   );
 }

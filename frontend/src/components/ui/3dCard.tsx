@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 interface ThreeDCardDemoProps {
@@ -8,16 +7,13 @@ interface ThreeDCardDemoProps {
     title: string;
     description: string;
     imageUrl: string;
-    linkText: string;
-    linkUrl: string;
-    buttonText: string;
   };
 }
 export function ThreeDCardDemo({ item }: ThreeDCardDemoProps) {
   return (
     <CardContainer>
       <CardBody className="border-2 rounded-3xl relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1]  w-auto sm:w-[30rem] h-auto p-6 py-10  ">
-        <CardItem translateZ="50" className="text-2xl font-bold text-white">
+        <CardItem translateZ="50" className="text-3xl font-semiBold text-white">
           {item.title}
         </CardItem>
         <CardItem
@@ -36,7 +32,7 @@ export function ThreeDCardDemo({ item }: ThreeDCardDemoProps) {
             alt="thumbnail"
           />
         </CardItem>
-        <div className="flex justify-between items-center mt-10">
+        {/* <div className="flex justify-between items-center mt-10">
           <CardItem
             translateZ={20}
             as="a"
@@ -46,7 +42,7 @@ export function ThreeDCardDemo({ item }: ThreeDCardDemoProps) {
           >
             {item.linkText}
           </CardItem>
-        </div>
+        </div> */}
       </CardBody>
     </CardContainer>
   );

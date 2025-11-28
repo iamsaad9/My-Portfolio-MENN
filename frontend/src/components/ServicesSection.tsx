@@ -9,17 +9,18 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { ThreeDCardDemo } from "./ui/3dCard";
+import { FlickeringGrid } from "./ui/shadcn-io/flickering-grid";
 
 function Services() {
   //   const services = [
   //     {
   //       title: "Web Development",
-  //       description: "Building responsive and dynamic websites frontends.",
+  //       description: ".",
   //       image: "/images/Services/website.jpg",
   //     },
   //     {
   //       title: "Web Applications",
-  //       description: "Creating interactive Ui and frontend for web applications.",
+  //       description: ".",
   //       image: "/images/Services/web_app.jpg",
   //     },
   //     {
@@ -83,7 +84,15 @@ function Services() {
         alt=""
         className="absolute right-0 bottom-0 -z-10"
       />
-      <div className="w-full flex flex-col sm:flex-row justify-around items-center p-5 sm:p-10 gap-10">
+      <div className="relative w-full flex flex-col sm:flex-row justify-around items-center p-5  sm:p-15  gap-10">
+        <FlickeringGrid
+          className="absolute inset-0"
+          squareSize={4}
+          gridGap={6}
+          flickerChance={0.1}
+          color="white"
+          maxOpacity={0.2}
+        />
         <motion.div
           initial={{ opacity: 0, x: -100 }} // hidden state (off screen left)
           whileInView={{ opacity: 1, x: 0 }} // animate into view
@@ -162,43 +171,33 @@ export default Services;
 
 const items = [
   {
-    title: "Modern UI Components",
-    description: "Hover to experience 3D depth & interactions.",
+    title: "Website Development",
+    description: "Building responsive and dynamic websites frontends",
+    imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+  },
+  {
+    title: "Personal Portfolios",
+    description: "Designing personalized and professional portfolio websites",
     imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
     buttonText: "Learn More",
     linkText: "Get Started",
     linkUrl: "/signup",
   },
   {
-    title: "Modern UI Components",
-    description: "Hover to experience 3D depth & interactions.",
+    title: "Web Applications",
+    description: "Creating interactive Ui and frontend for web applications",
     imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
     buttonText: "Learn More",
     linkText: "Get Started",
     linkUrl: "/signup",
   },
   {
-    title: "Modern UI Components",
-    description: "Hover to experience 3D depth & interactions.",
-    imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
-    buttonText: "Learn More",
-    linkText: "Get Started",
-    linkUrl: "/signup",
-  },
-  {
-    title: "Modern UI Components",
-    description: "Hover to experience 3D depth & interactions.",
+    title: "Landing Pages",
+    description:
+      "Developing high-converting landing pages for marketing campaigns",
     imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
     buttonText: "Learn More",
     linkText: "Get Started ->",
     linkUrl: "/signup",
-  },
-  {
-    title: "Lightning Fast APIs",
-    description: "Engineered for performance and scalability.",
-    imageUrl: "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
-    linkText: "Explore",
-    linkUrl: "/docs",
-    buttonText: "Sign Up",
   },
 ];

@@ -109,7 +109,7 @@ export const Header = () => {
         Building With Passion <br /> & Precision
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-10 dark:text-neutral-200">
-        From concept to deployment, we deliver reliable solutions using modern
+        From concept to deployment, delivering reliable solutions using modern
         frameworks and technologies.
       </p>
     </div>
